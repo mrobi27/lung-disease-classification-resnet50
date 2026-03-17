@@ -12,6 +12,23 @@ Pendekatan ini memanfaatkan kemampuan **Convolutional Neural Network (CNN)** unt
 
 ---
 
+## 🧰 Tech Stack
+
+<div align="center">
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+![Keras](https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+
+</div>
+
+---
+
 # 📌 Latar Belakang Masalah
 
 Diagnosis penyakit paru melalui citra **Chest X-Ray** seringkali memiliki tantangan karena adanya **kemiripan pola visual** antara beberapa kondisi paru seperti:
@@ -194,33 +211,26 @@ Setiap gambar menampilkan:
 
 ---
 
-# 🧰 Tech Stack
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-![Keras](https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-
----
-
-# 📁 Struktur Repository
+# 📁 Project Structure
 
 ```
 LUNG-DISEASE-CLASSIFICATION-RESNET50
 │
-├── dataset
-│   ├── raw
-│   └── processed
+├── 📂 dataset
+│   ├── 📂 raw
+│   │   └── Dataset asli dari Kaggle
+│   │
+│   └── 📂 processed
+│       └── Dataset setelah preprocessing
 │
-├── models
+├── 📂 models
 │   ├── resnet50_best_model.h5
+│   │   └── Model terbaik hasil training
+│   │
 │   └── class_indices.json
+│       └── Mapping label kelas
 │
-├── notebooks
+├── 📂 notebooks
 │   ├── 01_data_exploration.ipynb
 │   ├── 02_preprocessing.ipynb
 │   ├── 03_data_augmentation.ipynb
@@ -230,20 +240,24 @@ LUNG-DISEASE-CLASSIFICATION-RESNET50
 │   ├── 07_model_inference.ipynb
 │   └── 08_prepare_deployment.ipynb
 │
-├── results
+├── 📂 results
 │   ├── confusion_matrix.png
 │   ├── data_augmentation.png
 │   ├── random_predictions_showcase.png
 │   ├── sample_classes.png
 │   └── training_accuracy_loss.png
 │
-├── utils
+├── 📂 utils
+│   └── Helper functions untuk preprocessing dan inference
 │
 ├── app.py
+│   └── Aplikasi web (Streamlit) untuk diagnosis paru
+│
 ├── requirements.txt
+│   └── Daftar library Python yang digunakan
+│
 └── README.md
-```
-
+    └── Dokumentasi project
 ---
 
 # 🚀 Pengembangan Selanjutnya
