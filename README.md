@@ -258,7 +258,7 @@ LUNG-DISEASE-CLASSIFICATION-RESNET50
 │
 └── README.md
     └── Dokumentasi project
----
+```
 
 # 🚀 Pengembangan Selanjutnya
 
