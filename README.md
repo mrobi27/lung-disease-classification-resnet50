@@ -259,6 +259,7 @@ LUNG-DISEASE-CLASSIFICATION-RESNET50
 └── README.md
     └── Dokumentasi project
 ```
+---
 
 # 📥 Download Model & Hasil Training
 
@@ -281,12 +282,12 @@ models/
 
 # 🚀 Pengembangan Selanjutnya
 
-Beberapa pengembangan yang direncanakan:
+Beberapa rencana pengembangan riset di masa depan:
 
-* Deployment aplikasi menggunakan **Streamlit**
-* Visualisasi **Grad-CAM untuk Explainable AI**
-* Peningkatan dataset
-* Optimasi performa model
+* Eksplorasi Arsitektur Baru: Menguji perbandingan performa dengan model yang lebih modern seperti Vision Transformers (ViT) atau EfficientNet.
+* Data Multi-Modal: Menggabungkan analisis citra X-Ray dengan data rekam medis pasien (seperti usia dan gejala klinis).
+* Validasi Klinis: Pengujian aplikasi secara langsung bersama tenaga ahli radiologi di rumah sakit.
+* Cloud Deployment: Mengunggah aplikasi ke server cloud publik agar dapat diakses oleh fasilitas kesehatan secara luas.
 
 ---
 
