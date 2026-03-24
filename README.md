@@ -170,16 +170,16 @@ Teknik ini membantu model mengenali pola yang sama meskipun posisi citra berbeda
 <img src="results/training_accuracy_loss.png" width="800">
 </p>
 
-Grafik menunjukkan perubahan nilai **accuracy dan loss** selama proses training.
+Grafik di atas menunjukkan pergerakan nilai Accuracy dan Loss selama proses pelatihan. Dengan bantuan ReduceLROnPlateau dan EarlyStopping, model berhasil mencapai titik konvergensi yang optimal tanpa mengalami overfitting.
 
-Hasil terbaik:
+Hasil evaluasi akhir pada data yang belum pernah dilihat model (Blind Test):
 
 ```
-Validation Accuracy ≈ 90.18%
-Validation Loss ≈ 0.286
+Test Accuracy ≈ 86.20%
+Test Loss     ≈ 0.3568
 ```
 
-Model menunjukkan performa yang stabil selama proses pelatihan.
+Angka ini merepresentasikan performa model yang sangat realistis dan tangguh untuk data di dunia nyata (real-world data).
 
 ---
 
@@ -189,9 +189,9 @@ Model menunjukkan performa yang stabil selama proses pelatihan.
 <img src="results/confusion_matrix.png" width="650">
 </p>
 
-Confusion matrix digunakan untuk mengevaluasi performa klasifikasi model.
+Confusion Matrix digunakan untuk membedah sedetail apa model mengenali tiap-tiap penyakit.
 
-Hasil menunjukkan bahwa model mampu mengklasifikasikan kelas **Normal** dengan sangat baik, sementara beberapa kesalahan klasifikasi masih terjadi antara kelas **COVID** dan **Normal**.
+Berkat penerapan teknik Class Weighting untuk menangani ketimpangan data, model ini sekarang memiliki sensitivitas yang sangat tinggi terhadap COVID-19. Kesalahan deteksi yang membahayakan (False Negatives pada pasien COVID) berhasil ditekan secara drastis. Sebagai alat triage medis, model ini lebih memilih bersikap "waspada" (munculnya False Positives pada kelas Normal) daripada meloloskan pasien yang sebenarnya terinfeksi.
 
 ---
 
@@ -201,13 +201,13 @@ Hasil menunjukkan bahwa model mampu mengklasifikasikan kelas **Normal** dengan s
 <img src="results/random_predictions_showcase.png" width="850">
 </p>
 
-Gambar di atas menunjukkan contoh prediksi model pada beberapa citra **test dataset** secara acak.
+Gambar di atas menampilkan simulasi prediksi model pada beberapa citra dari **test dataset** yang diambil secara acak.
 
-Setiap gambar menampilkan:
+Setiap panel gambar menampilkan:
 
-* label sebenarnya
-* prediksi model
-* tingkat kepercayaan prediksi
+* Label Diagnosis Sebenarnya (Ground Truth)
+* Tebakan Diagnosis dari AI (Prediction)
+* Tingkat Keyakinan Model (Confidence Score)
 
 ---
 
@@ -259,6 +259,25 @@ LUNG-DISEASE-CLASSIFICATION-RESNET50
 └── README.md
     └── Dokumentasi project
 ```
+
+# 📥 Download Model & Hasil Training
+
+Karena keterbatasan ukuran GitHub, file hasil training disimpan di Google Drive:
+
+👉 https://drive.google.com/drive/folders/1z5SccpMrDoy2xTNH4-GE-a0X7-Y3jINH?usp=sharing
+
+Isi folder:
+
+* resnet50_best_model.h5
+* training results
+* visualisasi model
+
+📌 Setelah download:
+Letakkan file .h5 ke dalam folder:
+
+models/
+
+---
 
 # 🚀 Pengembangan Selanjutnya
 
