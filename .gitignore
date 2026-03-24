@@ -14,3 +14,5 @@ __pycache__/
 
 # OS file
 .DS_Store
+
+models/*.h5
