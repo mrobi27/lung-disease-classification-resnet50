@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methodology - LungAI</title>
+
+  <link href="css/output.css" rel="stylesheet">
+  <link href="src/style.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="flex flex-col min-h-screen bg-slate-950 text-slate-300 font-sans">
+
+  <div id="navbar-placeholder"></div>
+
+  <div class="flex flex-1 pt-[100px] px-6 md:px-12">
+
+    <main class="w-full max-w-5xl mx-auto pb-24">
+
+      <section class="section mb-16 border-b border-white/10 pb-12">
+        
+        <div class="mb-5 text-center md:text-left">
+          <span class="subtitle px-4 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-[11px] uppercase tracking-[0.15em] font-bold text-purple-400">Deep Learning Pipeline</span>
+        </div>
+
+        <h1 class="title text-4xl md:text-6xl font-extrabold mb-8 text-center md:text-left leading-tight">
+          Metodologi & Arsitektur AI
+        </h1>
+
+        <p class="text-slate-400 max-w-3xl mb-8 leading-relaxed text-base md:text-lg text-center md:text-left mx-auto md:mx-0">
+          Implementasi teknis menggunakan arsitektur <strong>ResNet-50</strong> yang dikombinasikan dengan strategi <em>Transfer Learning</em> untuk mencapai akurasi diagnosis yang optimal pada citra medis.
+        </p>
+      </section>
+
+      <section class="mb-20">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-8 flex items-center gap-3">
+          <span class="bg-blue-600/20 text-blue-400 w-10 h-10 rounded-xl flex items-center justify-center text-base font-bold border border-blue-500/20">1</span>
+          Tulang Punggung ResNet-50
+        </h2>
+        
+        <p class="text-slate-400 mb-10 max-w-4xl text-sm md:text-base leading-relaxed italic border-l-2 border-white/10 pl-6">
+          "ResNet-50 dipilih karena struktur Deep Residual Learning yang mampu mengatasi kendala degradasi pada jaringan saraf yang sangat dalam."
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div class="card p-7 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/[0.08] hover:border-blue-500/30 transition-all duration-500 group">
+            <h3 class="font-bold text-white mb-4 text-base flex items-center gap-2 group-hover:text-blue-400 transition">🔄 Skip Connections</h3>
+            <p class="text-slate-400 text-[13px] leading-relaxed">
+              Mekanisme yang memungkinkan gradien mengalir secara langsung melewati beberapa layer, mencegah hilangnya informasi penting selama proses pelatihan jaringan dalam.
+            </p>
+          </div>
+
+          <div class="card p-7 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/[0.08] hover:border-blue-500/30 transition-all duration-500 group">
+            <h3 class="font-bold text-white mb-4 text-base flex items-center gap-2 group-hover:text-blue-400 transition">🧠 Transfer Learning</h3>
+            <p class="text-slate-400 text-[13px] leading-relaxed">
+              Memanfaatkan bobot dari <strong>ImageNet</strong> sebagai basis pengetahuan visual, memungkinkan model belajar lebih cepat meskipun dengan dataset medis yang spesifik.
+            </p>
+          </div>
+
+          <div class="card p-7 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/[0.08] hover:border-blue-500/30 transition-all duration-500 group">
+            <h3 class="font-bold text-white mb-4 text-base flex items-center gap-2 group-hover:text-blue-400 transition">🧩 Custom Classifier</h3>
+            <p class="text-slate-400 text-[13px] leading-relaxed">
+              Mengganti lapisan <em>Top Layer</em> asli dengan struktur <em>Global Average Pooling</em> dan <em>Dense Layer</em> baru untuk menghasilkan probabilitas 3 kelas penyakit.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-8 flex items-center gap-3">
+          <span class="bg-purple-600/20 text-purple-400 w-10 h-10 rounded-xl flex items-center justify-center text-base font-bold border border-purple-500/20">2</span>
+          Strategi Pelatihan Lanjutan
+        </h2>
+
+        <p class="text-slate-400 mb-10 max-w-4xl text-sm md:text-base leading-relaxed">
+          Optimasi performa dilakukan melalui pendekatan matematis dan pemantauan metrik secara <em>real-time</em> selama proses pelatihan berlangsung.
+        </p>
+
+        <div class="space-y-6">
+          <div class="card relative overflow-hidden p-7 bg-slate-900/40 border border-white/10 rounded-2xl group hover:border-blue-500/40 transition-all duration-300">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 rounded-bl-full transition-all group-hover:bg-blue-500/10"></div>
+            <h4 class="font-bold text-blue-400 mb-3 text-lg tracking-wide uppercase text-[12px]">⚖️ Class Weighting</h4>
+            <p class="text-slate-300 text-sm leading-relaxed max-w-3xl">
+              Teknik ini memberikan bobot kerugian (loss) yang lebih tinggi pada kelas minoritas (COVID-19). Tujuannya adalah memastikan model tidak bias terhadap kelas mayoritas dan tetap memiliki sensitivitas klinis yang tinggi.
+            </p>
+          </div>
+
+          <div class="card relative overflow-hidden p-7 bg-slate-900/40 border border-white/10 rounded-2xl group hover:border-purple-500/40 transition-all duration-300">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-purple-500/5 rounded-bl-full transition-all group-hover:bg-purple-500/10"></div>
+            <h4 class="font-bold text-purple-400 mb-3 text-lg tracking-wide uppercase text-[12px]">📉 ReduceLROnPlateau</h4>
+            <p class="text-slate-300 text-sm leading-relaxed max-w-3xl">
+              Mengoptimalkan <em>Learning Rate</em> secara dinamis. Jika akurasi validasi berhenti meningkat selama beberapa periode (patience), sistem otomatis menurunkan kecepatan belajar agar model dapat menemukan titik konvergensi global.
+            </p>
+          </div>
+
+          <div class="card relative overflow-hidden p-7 bg-slate-900/40 border border-white/10 rounded-2xl group hover:border-green-500/40 transition-all duration-300">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-green-500/5 rounded-bl-full transition-all group-hover:bg-green-500/10"></div>
+            <h4 class="font-bold text-green-400 mb-3 text-lg tracking-wide uppercase text-[12px]">🛑 Early Stopping</h4>
+            <p class="text-slate-300 text-sm leading-relaxed max-w-3xl">
+              Bertugas sebagai pengawas otomatis yang menghentikan pelatihan saat model mulai menunjukkan gejala <em>overfitting</em> (menghafal data), menjamin bahwa bobot yang disimpan adalah versi terbaik untuk data baru.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    async function loadComponent(id, file) {
+      try {
+        const res = await fetch(file);
+        if (res.ok) {
+          const html = await res.text();
+          document.getElementById(id).innerHTML = html;
+        }
+      } catch (error) {
+        console.error('Error loading component:', error);
+      }
+    }
+
+    loadComponent('navbar-placeholder', 'components/navbar.html');
+    loadComponent('footer-placeholder', 'components/footer.html');
+  </script>
+
+</body>
+</html>

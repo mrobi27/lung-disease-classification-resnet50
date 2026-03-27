@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dataset - LungAI</title>
+
+  <link href="css/output.css" rel="stylesheet">
+  <link href="src/style.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="flex flex-col min-h-screen bg-slate-950 text-slate-300 font-sans">
+
+  <div id="navbar-placeholder"></div>
+
+  <div class="flex flex-1 pt-[100px] px-6 md:px-12">
+
+    <main class="w-full max-w-5xl mx-auto pb-24">
+
+      <section class="mb-16 border-b border-white/10 pb-12">
+        
+        <div class="mb-5 text-center md:text-left">
+          <span class="subtitle px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-full text-[11px] uppercase tracking-[0.15em] font-bold text-blue-400">Kaggle Open Dataset</span>
+        </div>
+
+        <h1 class="title text-4xl md:text-6xl font-extrabold mb-8 text-center md:text-left leading-tight">
+          Dataset X-Ray Paru-paru
+        </h1>
+
+        <p class="text-slate-400 max-w-3xl mb-10 leading-relaxed text-base md:text-lg text-center md:text-left mx-auto md:mx-0">
+          Menggunakan basis data <strong>COVID-19 Radiography Database</strong> yang telah memenangkan penghargaan dari Kaggle, berisi ribuan citra yang dikurasi secara medis untuk melatih algoritma Deep Learning.
+        </p>
+
+        <div class="flex justify-center md:justify-start">
+          <a href="https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database" target="_blank" 
+             class="inline-flex items-center gap-3 bg-[#20beff] hover:bg-[#1ba6e0] text-white px-7 py-3 rounded-xl text-sm font-bold transition-all duration-300 shadow-lg shadow-[#20beff]/25 transform hover:-translate-y-1">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.34-.246.526-.246h3.257c.141 0 .235.035.281.106.046.069.034.152-.036.246l-5.46 5.385 5.836 9.488c.07.118.046.212-.069.283z"/></svg>
+            Explore Raw Dataset
+          </a>
+        </div>
+      </section>
+
+      <section class="mb-20">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-8 flex items-center gap-3">
+          <span class="bg-blue-600/20 text-blue-400 w-10 h-10 rounded-xl flex items-center justify-center text-base font-bold border border-blue-500/20">1</span>
+          Seleksi Kelas Penyakit
+        </h2>
+        
+        <p class="text-slate-400 mb-10 max-w-4xl text-sm md:text-base leading-relaxed">
+            Untuk menjaga kemurnian data dan fokus diagnosis, kami melakukan penyaringan ketat terhadap kategori yang tersedia dalam dataset asli.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div class="card relative overflow-hidden p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/[0.08] transition-all">
+            <div class="absolute top-0 right-0 w-16 h-16 bg-blue-500/10 rounded-bl-full"></div>
+            <h3 class="font-bold text-white mb-4 text-base">🎯 3 Kelas Utama</h3>
+            <ul class="text-slate-400 text-sm space-y-3">
+              <li class="flex items-center gap-3 font-medium"><span class="w-2 h-2 bg-green-400 rounded-full shadow-[0_0_8px_rgba(74,222,128,0.5)]"></span> Normal</li>
+              <li class="flex items-center gap-3 font-medium"><span class="w-2 h-2 bg-red-400 rounded-full shadow-[0_0_8px_rgba(248,113,113,0.5)]"></span> COVID-19</li>
+              <li class="flex items-center gap-3 font-medium"><span class="w-2 h-2 bg-amber-400 rounded-full shadow-[0_0_8px_rgba(251,191,36,0.5)]"></span> Viral Pneumonia</li>
+            </ul>
+          </div>
+
+          <div class="card relative overflow-hidden p-8 bg-white/5 border border-red-500/20 rounded-2xl">
+            <div class="absolute top-0 right-0 w-16 h-16 bg-red-500/10 rounded-bl-full"></div>
+            <h3 class="font-bold text-red-400 mb-4 text-base">❌ Eksklusi Lung Opacity</h3>
+            <p class="text-slate-400 text-[13px] leading-relaxed">
+              Kategori ini dihapus karena merupakan temuan klinis yang ambigu (kekeruhan paru) dan dapat beririsan secara visual dengan ketiga kelas lainnya.
+            </p>
+          </div>
+
+          <div class="card relative overflow-hidden p-8 bg-white/5 border border-purple-500/20 rounded-2xl">
+            <div class="absolute top-0 right-0 w-16 h-16 bg-purple-500/10 rounded-bl-full"></div>
+            <h3 class="font-bold text-white mb-4 text-base">💡 Alasan Klinis</h3>
+            <p class="text-slate-400 text-[13px] leading-relaxed">
+              Langkah ini memastikan model CNN belajar membedakan fitur patologis yang unik dan tajam, bukan pola visual yang tumpang tindih.
+            </p>
+          </div>
+        </div>
+
+        <div class="card p-6 bg-slate-900/40 border border-white/10 rounded-3xl max-w-4xl mx-auto shadow-2xl">
+          <p class="text-center font-bold text-slate-500 mb-6 text-[11px] tracking-[0.2em] uppercase">Visualisasi Citra Chest X-Ray per Kelas</p>
+          <img src="assets/image/sample_classes.png" alt="Sample Classes" class="w-full rounded-xl filter contrast-125 brightness-110">
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-8 flex items-center gap-3">
+          <span class="bg-blue-600/20 text-blue-400 w-10 h-10 rounded-xl flex items-center justify-center text-base font-bold border border-blue-500/20">2</span>
+          Prapemrosesan & Augmentasi
+        </h2>
+
+        <p class="text-slate-400 mb-10 max-w-4xl text-sm md:text-base leading-relaxed">
+          Semua citra diproses ulang menjadi format seragam <strong>224x224 piksel</strong>. Kami menerapkan teknik augmentasi dinamis untuk memperkaya variasi data latihan.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div class="card p-3 bg-white/5 border border-white/10 rounded-2xl shadow-xl">
+            <img src="assets/image/data_augmentation.png" alt="Data Augmentation" class="w-full rounded-xl">
+          </div>
+          
+          <div class="grid grid-cols-1 gap-5">
+            <div class="card p-6 bg-slate-900/40 border border-white/10 rounded-2xl group hover:border-blue-500/30 transition-all">
+              <h4 class="font-bold text-white mb-2 text-base group-hover:text-blue-400 transition">🔄 Rotasi & Zoom Dinamis</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Mensimulasikan berbagai sudut kemiringan pasien dan variasi jarak saat pengambilan sinar-X.</p>
+            </div>
+            <div class="card p-6 bg-slate-900/40 border border-white/10 rounded-2xl group hover:border-blue-500/30 transition-all">
+              <h4 class="font-bold text-white mb-2 text-base group-hover:text-blue-400 transition">↔️ Pergeseran Piksel (Shifting)</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">Mencegah model hanya bergantung pada posisi objek yang berada tepat di tengah frame.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    async function loadComponent(id, file) {
+      try {
+        const res = await fetch(file);
+        if (res.ok) {
+          const html = await res.text();
+          document.getElementById(id).innerHTML = html;
+        }
+      } catch (error) {
+        console.error('Error loading component:', error);
+      }
+    }
+
+    loadComponent('navbar-placeholder', 'components/navbar.html');
+    loadComponent('footer-placeholder', 'components/footer.html');
+  </script>
+
+</body>
+</html>

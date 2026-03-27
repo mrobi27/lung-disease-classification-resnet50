@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results - LungAI</title>
+
+  <link href="css/output.css" rel="stylesheet">
+  <link href="src/style.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="flex flex-col min-h-screen bg-slate-950 text-slate-300 font-sans">
+
+  <div id="navbar-placeholder"></div>
+
+  <div class="flex flex-1 pt-[100px] px-6 md:px-12">
+
+    <main class="w-full max-w-5xl mx-auto pb-24">
+
+      <section class="section mb-16 border-b border-white/10 pb-12">
+        <div class="mb-5 text-center md:text-left">
+          <span class="subtitle px-4 py-1.5 bg-pink-500/10 border border-pink-500/20 rounded-full text-[11px] uppercase tracking-[0.15em] font-bold text-pink-400">Model Performance</span>
+        </div>
+
+        <h1 class="title text-4xl md:text-6xl font-extrabold mb-8 text-center md:text-left leading-tight">
+          Hasil Evaluasi Model
+        </h1>
+
+        <p class="text-slate-400 max-w-3xl mb-8 leading-relaxed text-base md:text-lg text-center md:text-left mx-auto md:mx-0">
+          Evaluasi akhir pada <em>Blind Test Set</em> membuktikan keandalan sistem dalam mendeteksi patologi paru, didukung oleh transparansi visual dari <strong>Explainable AI</strong>.
+        </p>
+      </section>
+
+      <div id="metrics-section" class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+        <div class="card text-center p-8 bg-white/5 border !border-blue-500/30 rounded-2xl shadow-lg shadow-blue-500/5 transition-all hover:bg-white/[0.08]">
+          <p class="text-[11px] uppercase tracking-widest text-slate-500 mb-3 font-bold">Test Accuracy</p>
+          <h2 id="count-accuracy" class="text-3xl md:text-4xl font-bold text-white tracking-tight">0.00%</h2>
+        </div>
+        <div class="card text-center p-8 bg-white/5 border border-white/10 rounded-2xl transition-all hover:bg-white/[0.08]">
+          <p class="text-[11px] uppercase tracking-widest text-slate-500 mb-3 font-bold">Test Loss</p>
+          <h2 id="count-loss" class="text-3xl md:text-4xl font-bold text-white tracking-tight">0.00</h2>
+        </div>
+        <div class="card text-center p-8 bg-white/5 border border-white/10 rounded-2xl transition-all hover:bg-white/[0.08]">
+          <p class="text-[11px] uppercase tracking-widest text-slate-500 mb-3 font-bold">COVID Sens.</p>
+          <h2 id="count-sens" class="text-3xl md:text-4xl font-bold text-white tracking-tight">0%</h2>
+        </div>
+        <div class="card text-center p-8 bg-white/5 border border-white/10 rounded-2xl transition-all hover:bg-white/[0.08]">
+          <p class="text-[11px] uppercase tracking-widest text-slate-500 mb-3 font-bold">Epochs</p>
+          <h2 id="count-epoch" class="text-3xl md:text-4xl font-bold text-white tracking-tight">0</h2>
+        </div>
+      </div>
+
+      <section class="mb-24">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-12 flex items-center gap-4">
+          <span class="bg-blue-600/20 text-blue-400 w-10 h-10 rounded-xl flex items-center justify-center text-base font-bold border border-blue-500/20">1</span>
+          Analisis Training & Klasifikasi
+        </h2>
+        
+        <div class="space-y-24">
+          
+          <div class="flex flex-col lg:flex-row gap-12 lg:items-center">
+            <div class="lg:w-3/5 card p-5 bg-white/5 border border-white/10 rounded-2xl shadow-2xl group">
+              <h3 class="font-bold text-white mb-5 text-center text-[10px] uppercase tracking-[0.2em] text-slate-500">Training & Validation Plot</h3>
+              <img src="assets/image/training_accuracy_loss.png" alt="Training Curve" class="w-full rounded-xl filter contrast-110 shadow-lg transition duration-500 group-hover:scale-[1.01]">
+            </div>
+            <div class="lg:w-2/5 space-y-6">
+              <h3 class="text-2xl font-bold text-white tracking-tight">Stabilitas Konvergensi</h3>
+              <p class="text-slate-400 text-base leading-relaxed italic border-l-2 border-white/10 pl-5">
+                Grafik menunjukkan proses belajar model yang stabil. Kurva Accuracy meningkat secara konsisten, sementara kurva Loss menurun tanpa fluktuasi ekstrem.
+              </p>
+              <div class="bg-blue-500/5 p-6 rounded-2xl border border-blue-500/10 border-l-4 border-l-blue-500 shadow-xl shadow-blue-500/5">
+                <p class="text-slate-300 text-sm leading-relaxed">
+                  <strong>Insight:</strong> Jarak sempit antara garis Training dan Validation membuktikan model memiliki generalisasi tinggi, meminimalkan risiko <em>overfitting</em> pada data baru.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col lg:flex-row-reverse gap-12 lg:items-center">
+            <div class="lg:w-3/5 card p-5 bg-white/5 border border-white/10 rounded-2xl shadow-2xl group">
+              <h3 class="font-bold text-white mb-5 text-center text-[10px] uppercase tracking-[0.2em] text-slate-500">Confusion Matrix Heatmap</h3>
+              <img src="assets/image/confusion_matrix.png" alt="Confusion Matrix" class="w-full rounded-xl filter contrast-110 shadow-lg transition duration-500 group-hover:scale-[1.01]">
+            </div>
+            <div class="lg:w-2/5 space-y-6">
+              <h3 class="text-2xl font-bold text-white tracking-tight">Ketajaman Prediksi</h3>
+              <p class="text-slate-400 text-base leading-relaxed italic border-l-2 border-white/10 pl-5">
+                Model terbukti sangat akurat dalam membedakan antara paru-paru Normal dan COVID-19 secara signifikan.
+              </p>
+              <div class="bg-purple-500/5 p-6 rounded-2xl border border-purple-500/10 border-l-4 border-l-purple-500 shadow-xl shadow-purple-500/5">
+                <p class="text-slate-300 text-sm leading-relaxed">
+                  <strong>Insight:</strong> Implementasi <em>Class Weighting</em> berhasil menekan angka <em>False Negative</em> pada diagnosis COVID-19, memprioritaskan keamanan klinis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="grad-cam-demo" class="mb-24">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-10 flex items-center gap-4">
+          <span class="bg-pink-600/20 text-pink-400 w-10 h-10 rounded-xl flex items-center justify-center text-base font-bold border border-pink-500/20">2</span>
+          Explainable AI (Grad-CAM)
+        </h2>
+
+        <div class="card p-8 md:p-12 bg-white/5 border border-white/10 rounded-[2rem] shadow-2xl">
+          <div class="max-w-2xl mb-12">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-6 tracking-tight">Transparansi Keputusan Model</h3>
+            <p class="text-slate-400 text-base md:text-lg leading-relaxed">
+              Teknik <strong>Grad-CAM</strong> memvisualisasikan area spesifik yang memengaruhi prediksi AI, mengubah model "Black Box" menjadi sistem yang dapat diinterpretasi oleh tenaga medis.
+            </p>
+          </div>
+
+          <div class="bg-slate-950/50 p-6 rounded-2xl mb-12 border border-white/5 shadow-inner group overflow-hidden">
+            <img src="assets/image/random_predictions_showcase.png" alt="Grad CAM Predictions" class="w-full rounded-xl transition duration-700 group-hover:scale-[1.02]">
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white/5 p-8 rounded-2xl border border-white/10 transition-all hover:bg-white/[0.08]">
+                <h4 class="text-white font-bold text-base mb-4 flex items-center gap-3 text-red-400">
+                    <span class="w-2.5 h-2.5 bg-red-500 rounded-full shadow-[0_0_10px_rgba(239,68,68,0.6)]"></span> Interpretasi Heatmap
+                </h4>
+                <p class="text-slate-400 text-sm md:text-base leading-relaxed">
+                    Warna merah menunjukkan area intensitas tinggi yang menjadi dasar fokus AI. Area ini secara konsisten berhimpitan dengan lokasi lesi atau infiltrat pada radiologi asli.
+                </p>
+            </div>
+            <div class="bg-white/5 p-8 rounded-2xl border border-white/10 transition-all hover:bg-white/[0.08]">
+                <h4 class="text-white font-bold text-base mb-4 flex items-center gap-3 text-blue-400">
+                    <span class="w-2.5 h-2.5 bg-blue-500 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.6)]"></span> Validasi Klinis
+                </h4>
+                <p class="text-slate-400 text-sm md:text-base leading-relaxed">
+                    Fitur ini membantu memverifikasi apakah AI mendeteksi penyakit berdasarkan fitur radiologis yang valid (seperti <em>Ground-glass opacity</em>) atau artefak gambar yang tidak relevan.
+                </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    async function loadComponent(id, file) {
+      try {
+        const res = await fetch(file);
+        if (res.ok) {
+          const html = await res.text();
+          document.getElementById(id).innerHTML = html;
+        }
+      } catch (error) { console.error('Error:', error); }
+    }
+    loadComponent('navbar-placeholder', 'components/navbar.html');
+
+    function animateValue(id, start, end, duration, isPercent = false) {
+      const obj = document.getElementById(id);
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const currentVal = (progress * (end - start) + start);
+        if (isPercent) {
+            obj.innerHTML = (id === "count-sens" ? Math.floor(currentVal) : currentVal.toFixed(2)) + "%";
+        } else {
+            obj.innerHTML = (id === "count-epoch" ? Math.floor(currentVal) : currentVal.toFixed(2));
+        }
+        if (progress < 1) window.requestAnimationFrame(step);
+      };
+      window.requestAnimationFrame(step);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const metricsSection = document.getElementById("metrics-section");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateValue("count-accuracy", 0, 86.20, 1500, true);
+            animateValue("count-loss", 0, 0.35, 1500, false);
+            animateValue("count-sens", 0, 92, 1500, true);
+            animateValue("count-epoch", 0, 16, 1500, false);
+          } else {
+            document.getElementById("count-accuracy").innerHTML = "0.00%";
+            document.getElementById("count-loss").innerHTML = "0.00";
+            document.getElementById("count-sens").innerHTML = "0%";
+            document.getElementById("count-epoch").innerHTML = "0";
+          }
+        });
+      }, { threshold: 0.1 });
+      if (metricsSection) observer.observe(metricsSection);
+    });
+  </script>
+</body>
+</html>
