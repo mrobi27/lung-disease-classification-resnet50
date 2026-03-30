@@ -17,99 +17,159 @@
   <div class="flex flex-1 pt-[100px] px-6 md:px-12">
     <main class="w-full max-w-5xl mx-auto pb-24">
 
-      <section class="mb-20 text-center flex flex-col items-center">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] sm:text-xs font-semibold tracking-widest uppercase mb-6 shadow-sm">
-          <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
-          ResNet-50 Transfer Learning
-        </div>
-        
-        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent leading-tight tracking-tight max-w-4xl mx-auto">
-          Klasifikasi Pneumonia <br class="hidden sm:block"> dengan Deep Learning
+      <section class="mb-24 mt-8 text-center flex flex-col items-center relative">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-blue-500/10 blur-[100px] -z-10 rounded-full pointer-events-none"></div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent leading-tight tracking-tight max-w-4xl mx-auto">
+          Klasifikasi Multikelas Penyakit Paru pada Citra X-Ray
         </h1>
 
-        <p class="text-sm md:text-base lg:text-lg text-slate-400 max-w-2xl leading-relaxed mb-10">
-          Sistem Artificial Intelligence komprehensif untuk mendeteksi kondisi <span class="text-white font-medium">Normal, COVID-19, dan Viral Pneumonia</span> dari citra Chest X-Ray secara otomatis menggunakan arsitektur CNN berkinerja tinggi.
+        <p class="text-sm md:text-base lg:text-lg text-slate-400 max-w-3xl leading-relaxed mb-10">
+          Implementasi Transfer Learning <strong>ResNet-50</strong> untuk mengotomatisasi ekstraksi fitur dan mengklasifikasikan kondisi <span class="text-white font-medium">Normal, COVID-19, dan Viral Pneumonia</span> secara presisi.
         </p>
         
-        <div class="flex flex-col sm:flex-row gap-3 justify-center w-full sm:w-auto">
-            <a href="results.html#grad-cam-demo" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all duration-300 shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2 transform hover:-translate-y-1">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
+            <a href="results.html#grad-cam-demo" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white px-8 py-3 rounded-xl text-sm font-bold transition-all duration-300 shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2 transform hover:-translate-y-1">
                 🚀 View AI Demo
             </a>
-            <a href="https://github.com/mrobi27/lung-disease-classification-resnet50" target="_blank" class="bg-white/5 hover:bg-white/10 border border-white/10 text-white px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2 transform hover:-translate-y-1">
+            <a href="https://github.com/mrobi27/lung-disease-classification-resnet50" target="_blank" class="bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-3 rounded-xl text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-2 transform hover:-translate-y-1">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
                 Source Code
             </a>
         </div>
       </section>
 
-      <section id="summary-section" class="mb-20 bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-2xl p-6 lg:p-10 backdrop-blur-md">
-          <h2 class="text-xl font-bold mb-5 text-white flex items-center gap-2">
-              <span class="text-blue-400">⚡</span> Executive Summary
+      <section id="summary-section" class="mb-24 bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-[2rem] p-8 lg:p-12 backdrop-blur-md shadow-2xl">
+          <h2 class="text-xl md:text-2xl font-bold mb-6 text-white flex items-center gap-3">
+              <span class="bg-blue-500/20 text-blue-400 p-2 rounded-lg">⚡</span> Executive Summary
           </h2>
-          <p class="text-slate-400 leading-relaxed mb-8 text-sm md:text-base">
+          <p class="text-slate-400 leading-relaxed mb-10 text-sm md:text-base">
               Proyek ini bertujuan untuk mengatasi tantangan misdiagnosis pada penyakit paru akibat kemiripan visual radiologis. Dengan memanfaatkan teknik <strong>Transfer Learning</strong>, model ini dilatih secara khusus menangani masalah <em>imbalanced data</em> untuk memprioritaskan sensitivitas klinis (terutama pada kasus COVID-19).
           </p>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-white/10 pt-8 text-center sm:text-left">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 border-t border-white/10 pt-8 text-center sm:text-left">
               <div>
-                  <p class="text-slate-500 text-[10px] mb-1 uppercase tracking-widest font-semibold">Akurasi Validasi</p>
-                  <p id="accuracy-number" class="text-3xl font-bold text-white tracking-tight">0.00%</p>
+                  <p class="text-slate-500 text-[10px] mb-2 uppercase tracking-widest font-bold">Akurasi Validasi</p>
+                  <p id="accuracy-number" class="text-3xl lg:text-4xl font-extrabold text-white tracking-tight">0.00%</p>
               </div>
               <div>
-                  <p class="text-slate-500 text-[10px] mb-1 uppercase tracking-widest font-semibold">Arsitektur Inti</p>
-                  <p class="text-3xl font-bold text-white tracking-tight">ResNet-50</p>
+                  <p class="text-slate-500 text-[10px] mb-2 uppercase tracking-widest font-bold">Arsitektur Inti</p>
+                  <p class="text-3xl lg:text-4xl font-extrabold text-white tracking-tight">ResNet-50</p>
               </div>
               <div>
-                  <p class="text-slate-500 text-[10px] mb-1 uppercase tracking-widest font-semibold">Fitur Utama</p>
-                  <p class="text-3xl font-bold text-white tracking-tight">Grad-CAM</p>
+                  <p class="text-slate-500 text-[10px] mb-2 uppercase tracking-widest font-bold">Fitur Utama</p>
+                  <p class="text-3xl lg:text-4xl font-extrabold text-white tracking-tight">Grad-CAM</p>
               </div>
           </div>
       </section>
 
-      <section class="mb-24 grid md:grid-cols-2 gap-10 items-center">
+      <section class="mb-24 grid md:grid-cols-2 gap-12 items-center">
         <div class="order-2 md:order-1">
-          <h2 class="text-2xl font-bold mb-6 text-white">🔬 Tantangan Medis</h2>
+          <h2 class="text-2xl font-bold mb-8 text-white">🔬 Tantangan Medis</h2>
           <div class="space-y-6">
-            <div class="flex gap-4">
-              <div class="text-blue-500 font-bold shrink-0">01.</div>
-              <p class="text-sm text-slate-400 leading-relaxed"><strong class="text-white">Visual Ambiguity:</strong> Kemiripan tekstur antara COVID-19 dan pneumonia biasa seringkali menyulitkan diagnosa manual oleh radiolog pemula.</p>
+            <div class="flex gap-4 items-start">
+              <div class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 font-bold shrink-0 shadow-[0_0_10px_rgba(59,130,246,0.3)]">1</div>
+              <p class="text-sm text-slate-400 leading-relaxed mt-1"><strong class="text-white">Visual Ambiguity:</strong> Kemiripan tekstur (infiltrat/bercak) antara COVID-19 dan pneumonia biasa seringkali menyulitkan diagnosa manual dan rentan <em>human error</em>.</p>
             </div>
-            <div class="flex gap-4">
-              <div class="text-purple-500 font-bold shrink-0">02.</div>
-              <p class="text-sm text-slate-400 leading-relaxed"><strong class="text-white">Data Imbalance:</strong> Jumlah data COVID-19 jauh lebih sedikit dibandingkan data Normal, sehingga AI cenderung bias jika tidak ditangani dengan benar.</p>
+            <div class="flex gap-4 items-start">
+              <div class="flex items-center justify-center w-8 h-8 rounded-full bg-purple-500/20 text-purple-400 font-bold shrink-0 shadow-[0_0_10px_rgba(168,85,247,0.3)]">2</div>
+              <p class="text-sm text-slate-400 leading-relaxed mt-1"><strong class="text-white">Data Imbalance:</strong> Jumlah data COVID-19 jauh lebih sedikit, AI cenderung bias jika tidak ditangani dengan benar.</p>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="flex items-center justify-center w-8 h-8 rounded-full bg-red-500/20 text-red-400 font-bold shrink-0 shadow-[0_0_10px_rgba(239,68,68,0.3)]">3</div>
+              <p class="text-sm text-slate-400 leading-relaxed mt-1"><strong class="text-white">Eksklusi Lung Opacity:</strong> Kelas ini dihapus dari dataset Kaggle karena hanya temuan radiologis umum, bukan penyakit spesifik. Menghapusnya menajamkan <em>decision boundary</em> model.</p>
             </div>
           </div>
         </div>
-        <div class="order-1 md:order-2 bg-white/5 border border-white/10 p-4 rounded-3xl group">
-          <img src="assets/image/sample_classes.png" alt="X-ray preview" class="rounded-2xl grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition duration-700">
-          <p class="text-center text-[10px] text-slate-500 mt-4 italic uppercase tracking-widest">Multi-class Chest X-Ray Samples</p>
+        <div class="order-1 md:order-2 bg-slate-900/50 border border-white/10 p-5 rounded-[2rem] group shadow-2xl">
+          <img src="assets/image/sample_classes.png" alt="X-ray preview" class="rounded-2xl grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition duration-700 shadow-inner">
+          <p class="text-center text-[10px] text-slate-500 mt-5 italic uppercase tracking-[0.2em] font-bold">Multi-class Chest X-Ray Samples</p>
         </div>
       </section>
 
-      <h2 class="text-xl font-bold mb-8 text-white flex items-center gap-2">
+      <section class="mb-24">
+        <h2 class="text-2xl font-bold mb-8 text-white flex items-center gap-3">
+          <span class="text-amber-500">🎯</span> Tujuan & Luaran Penelitian
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl relative overflow-hidden group hover:border-amber-500/30 hover:-translate-y-1 transition-all duration-300">
+             <h3 class="text-white font-bold mb-3 text-base flex items-center gap-2">🛡️ Keamanan Klinis</h3>
+             <p class="text-slate-400 text-xs leading-relaxed">Fokus menekan nilai <em>False Negative</em> (kesalahan diagnosis pasien sakit menjadi sehat) pada kelas COVID-19 dan Pneumonia sebagai prioritas utama keselamatan pasien.</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl relative overflow-hidden group hover:border-amber-500/30 hover:-translate-y-1 transition-all duration-300">
+             <h3 class="text-white font-bold mb-3 text-base flex items-center gap-2">👁️ Explainable AI</h3>
+             <p class="text-slate-400 text-xs leading-relaxed">Tidak hanya menghasilkan akurasi tinggi, model akan dilengkapi dengan visualisasi <strong>Grad-CAM</strong> yang berfungsi sebagai <em>second opinion</em> yang dapat diinterpretasi oleh tenaga medis.</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl relative overflow-hidden group hover:border-amber-500/30 hover:-translate-y-1 transition-all duration-300">
+             <h3 class="text-white font-bold mb-3 text-base flex items-center gap-2">📑 Publikasi SINTA</h3>
+             <p class="text-slate-400 text-xs leading-relaxed">Menyusun temuan eksperimen ke dalam format IMRAD untuk dipublikasikan pada jurnal ilmiah terakreditasi <strong>SINTA</strong> sebagai kontribusi nyata pada literatur medis dan AI.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-24">
+        <h2 class="text-2xl font-bold mb-10 text-white flex items-center gap-3">
+          <span class="text-blue-500">🔄</span> Alur Penelitian (System Flowchart)
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl relative overflow-hidden group hover:border-blue-500/30 hover:-translate-y-1 transition-all duration-300">
+            <div class="absolute top-0 right-0 bg-white/10 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl group-hover:bg-blue-500/20 group-hover:text-blue-300 transition-all">1</div>
+            <h3 class="text-white font-bold mb-3 text-base mt-2 flex items-center gap-2">📥 Preprocessing & Data</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">Download Kaggle Dataset. Resizing (224x224), Min-Max Normalization, dan Data Augmentation (Rotasi, Zoom).</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl relative overflow-hidden group hover:border-blue-500/30 hover:-translate-y-1 transition-all duration-300">
+            <div class="absolute top-0 right-0 bg-white/10 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl group-hover:bg-blue-500/20 group-hover:text-blue-300 transition-all">2</div>
+            <h3 class="text-white font-bold mb-3 text-base mt-2 flex items-center gap-2">✂️ Dataset Splitting</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">Membagi kumpulan data menjadi 3 bagian: <em>Training Set</em>, <em>Validation Set</em>, dan <em>Testing Set</em> (Pengujian Akhir).</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl relative overflow-hidden group hover:border-blue-500/30 hover:-translate-y-1 transition-all duration-300">
+            <div class="absolute top-0 right-0 bg-white/10 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl group-hover:bg-blue-500/20 group-hover:text-blue-300 transition-all">3</div>
+            <h3 class="text-white font-bold mb-3 text-base mt-2 flex items-center gap-2">🧠 Modeling (CNN)</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">Transfer Learning ResNet-50. Fine-tuning pada Fully Connected Layer dengan aktivasi Softmax (3 Kelas).</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl relative overflow-hidden group hover:border-blue-500/30 hover:-translate-y-1 transition-all duration-300">
+            <div class="absolute top-0 right-0 bg-white/10 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl group-hover:bg-blue-500/20 group-hover:text-blue-300 transition-all">4</div>
+            <h3 class="text-white font-bold mb-3 text-base mt-2 flex items-center gap-2">📊 Evaluasi Model</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">Pengujian Buta (Blind Test) menggunakan Confusion Matrix untuk melihat Accuracy, Precision, Recall, dan F1-Score.</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl relative overflow-hidden group hover:border-blue-500/30 hover:-translate-y-1 transition-all duration-300">
+            <div class="absolute top-0 right-0 bg-white/10 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl group-hover:bg-blue-500/20 group-hover:text-blue-300 transition-all">5</div>
+            <h3 class="text-white font-bold mb-3 text-base mt-2 flex items-center gap-2">📈 Analisis Hasil</h3>
+            <p class="text-slate-400 text-xs leading-relaxed">Pembahasan grafik Learning Curve (Loss & Accuracy tiap Epoch) untuk membuktikan model tidak Overfitting.</p>
+          </div>
+          <div class="bg-blue-500/10 border border-blue-500/20 p-6 rounded-2xl relative overflow-hidden group hover:border-blue-400/40 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-blue-500/5">
+            <div class="absolute top-0 right-0 bg-blue-500/20 text-blue-300 text-[10px] font-bold px-3 py-1 rounded-bl-xl">6</div>
+            <h3 class="text-blue-400 font-bold mb-3 text-base mt-2 flex items-center gap-2">📝 Penulisan Jurnal SINTA</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">Penyusunan naskah publikasi menggunakan format IMRAD (Introduction, Method, Results & Discussion, Conclusion).</p>
+          </div>
+        </div>
+      </section>
+
+      <h2 class="text-2xl font-bold mb-8 text-white flex items-center gap-3">
         <span class="text-blue-500">📚</span> Dokumentasi Teknis
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-24">
-        <a href="dataset.html" class="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 hover:border-blue-500/50 transition-all duration-300 group hover:-translate-y-1">
-          <div class="w-10 h-10 bg-blue-500/20 text-blue-400 rounded-lg flex items-center justify-center text-lg mb-4 group-hover:scale-110 transition duration-300">📊</div>
-          <h3 class="font-bold text-white mb-2 text-base">Dataset & Preprocessing</h3>
-          <p class="text-slate-500 text-xs leading-relaxed">Eksplorasi database radiografi, teknik augmentasi, dan penanganan ketimpangan kelas.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+        <a href="dataset.html" class="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 hover:border-blue-500/50 transition-all duration-300 group hover:-translate-y-1">
+          <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition duration-300">📊</div>
+          <h3 class="font-bold text-white mb-2 text-lg">Dataset & Preprocessing</h3>
+          <p class="text-slate-400 text-[13px] leading-relaxed">Eksplorasi database radiografi, teknik augmentasi, dan penanganan ketimpangan kelas.</p>
         </a>
 
-        <a href="methodology.html" class="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 hover:border-purple-500/50 transition-all duration-300 group hover:-translate-y-1">
-          <div class="w-10 h-10 bg-purple-500/20 text-purple-400 rounded-lg flex items-center justify-center text-lg mb-4 group-hover:scale-110 transition duration-300">⚙️</div>
-          <h3 class="font-bold text-white mb-2 text-base">Methodology & Training</h3>
-          <p class="text-slate-500 text-xs leading-relaxed">Arsitektur ResNet-50, strategi Transfer Learning, dan tuning Hyperparameter.</p>
+        <a href="methodology.html" class="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 hover:border-purple-500/50 transition-all duration-300 group hover:-translate-y-1">
+          <div class="w-12 h-12 bg-purple-500/20 text-purple-400 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition duration-300">⚙️</div>
+          <h3 class="font-bold text-white mb-2 text-lg">Methodology & Training</h3>
+          <p class="text-slate-400 text-[13px] leading-relaxed">Arsitektur ResNet-50, strategi Transfer Learning, dan tuning Hyperparameter.</p>
         </a>
 
-        <a href="results.html" class="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 hover:border-pink-500/50 transition-all duration-300 group hover:-translate-y-1">
-          <div class="w-10 h-10 bg-pink-500/20 text-pink-400 rounded-lg flex items-center justify-center text-lg mb-4 group-hover:scale-110 transition duration-300">📈</div>
-          <h3 class="font-bold text-white mb-3 text-xl">Results & Evaluation</h3>
-          <p class="text-slate-500 text-xs leading-relaxed">Analisis Confusion Matrix dan visualisasi Explainable AI (Grad-CAM).</p>
+        <a href="results.html" class="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 hover:border-pink-500/50 transition-all duration-300 group hover:-translate-y-1">
+          <div class="w-12 h-12 bg-pink-500/20 text-pink-400 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition duration-300">📈</div>
+          <h3 class="font-bold text-white mb-2 text-lg">Results & Evaluation</h3>
+          <p class="text-slate-400 text-[13px] leading-relaxed">Analisis Confusion Matrix dan visualisasi Explainable AI (Grad-CAM).</p>
         </a>
       </div>
 
-      <section class="border-t border-white/10 pt-20 pb-20 text-center">
+      <section class="border-t border-white/10 pt-20 pb-10 text-center">
         <p class="text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-12 font-bold italic">Powered by State-of-the-Art Tools</p>
         <div class="flex flex-wrap justify-center gap-10 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
           <div class="flex flex-col items-center gap-3">
@@ -164,9 +224,10 @@
       }
     }
 
+    // HANYA MELOAD NAVBAR
     loadComponent('navbar-placeholder', 'components/navbar.html');
 
-    // Update Tahun Copyright otomatis
+    // MENGATUR TAHUN DI FOOTER HARDCODE
     document.getElementById('year').textContent = new Date().getFullYear();
 
     function animateValue(obj, start, end, duration) {
